@@ -370,7 +370,7 @@ static void LEDMeterMode_draw(Meter* this, int x, int y, int w) {
             break;
 #ifdef HAVE_LIBNCURSESW
          const cchar_t wc = { .chars = { c, '\0' }, .attr = 0 }; /* use LED_COLOR from attrset() */
-         mvadd_wch(yText, xx, &wc);
+         mvaddch(yText, xx, ' ' | A_REVERSE);
 #else
          mvaddch(yText, xx, c);
 #endif

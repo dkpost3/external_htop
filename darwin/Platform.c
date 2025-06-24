@@ -39,7 +39,6 @@ in the source distribution for its full text.
 #include "DateMeter.h"
 #include "DateTimeMeter.h"
 #include "FileDescriptorMeter.h"
-#include "GPUMeter.h"
 #include "HostnameMeter.h"
 #include "LoadAverageMeter.h"
 #include "Macros.h"
@@ -146,7 +145,6 @@ const MeterClass* const Platform_meterTypes[] = {
    &DiskIOMeter_class,
    &NetworkIOMeter_class,
    &FileDescriptorMeter_class,
-   &GPUMeter_class,
    &BlankMeter_class,
    NULL
 };

@@ -26,7 +26,6 @@ in the source distribution for its full text.
 #include <sys/stat.h>
 
 #include "Compat.h"
-#include "GPUMeter.h"
 #include "Hashtable.h"
 #include "Machine.h"
 #include "Macros.h"
@@ -1820,13 +1819,6 @@ static bool LinuxProcessTable_recurseProcTree(LinuxProcessTable* this, openat_ar
          Scheduling_readProcessPolicy(proc);
       }
       #endif
-
-         if (mainTask) {
-            lp->gpu_time = mainTask->gpu_time;
-         } else {
-            GPU_readProcessData(this, lp, procFd);
-         }
-      }
 
       /*
        * Final section after all data has been gathered
